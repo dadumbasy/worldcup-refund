@@ -307,8 +307,9 @@ async function submitForm() {
 
   // 최신 데이터 먼저 불러오기
   try {
-    const res = await window.storage.get(STORAGE_KEY, true);
-    submissions = res ? JSON.parse(res.value) : [];
+    const res = await fetch(FIREBASE_URL + '.json');
+    const data = await res.json();
+    submissions = data || [];
   } catch(e) { submissions = []; }
 
   if (submissions.find(s => s.name === name)) {
