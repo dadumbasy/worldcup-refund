@@ -20,47 +20,38 @@
   }
   html, body { height: 100%; }
   body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
-
   nav { display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 56px; border-bottom: 1px solid var(--border); background: rgba(13,13,15,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
   .nav-logo { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--gold2); }
   .nav-logo span { font-size: 18px; }
   .nav-badge { font-size: 11px; background: var(--gold-bg); border: 1px solid var(--gold-border); color: var(--gold); padding: 3px 10px; border-radius: 20px; }
-
   .tabs { display: flex; max-width: 480px; width: 100%; margin: 1.25rem auto 0; padding: 0 1rem; gap: 6px; }
   .tab-btn { flex: 1; padding: 0.6rem; background: var(--surface2); color: var(--text3); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; font-family: inherit; cursor: pointer; transition: all 0.18s; }
   .tab-btn.active { background: var(--gold-bg); border-color: var(--gold-border); color: var(--gold2); font-weight: 500; }
-
   .main { display: flex; flex-direction: column; align-items: center; padding: 1rem 1rem 4rem; gap: 1rem; }
   .tab-panel { width: 100%; display: none; flex-direction: column; align-items: center; gap: 1rem; }
   .tab-panel.active { display: flex; }
-
   .card { width: 100%; max-width: 480px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
   .card-header { padding: 1rem 1.25rem 0.75rem; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; }
   .card-header-icon { width: 28px; height: 28px; border-radius: 8px; background: var(--gold-bg); border: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
   .card-header h3 { font-size: 13px; font-weight: 500; color: var(--text2); }
   .card-desc { font-size: 12px; color: var(--text3); margin-top: 3px; line-height: 1.6; }
   .card-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
-
   .field-label { font-size: 12px; color: var(--text3); letter-spacing: 0.05em; font-weight: 500; text-transform: uppercase; margin-bottom: 6px; }
   select, input[type="text"], input[type="password"] { width: 100%; padding: 0.65rem 0.9rem; background: var(--surface2); color: var(--text); border: 1px solid var(--border2); border-radius: var(--radius-sm); font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s; appearance: none; }
   select { cursor: pointer; }
   input { cursor: text; }
   select:focus, input:focus { border-color: var(--gold); }
   input::placeholder { color: var(--text3); }
-
   .toggle-group { display: flex; gap: 8px; }
   .toggle-btn { flex: 1; padding: 0.65rem 0.5rem; background: var(--surface2); color: var(--text2); border: 1px solid var(--border2); border-radius: var(--radius-sm); font-size: 13.5px; font-family: inherit; cursor: pointer; transition: all 0.18s; display: flex; align-items: center; justify-content: center; gap: 5px; }
   .toggle-btn:hover { color: var(--text); background: var(--surface3); }
   .toggle-btn.active-gold { border-color: var(--gold); background: var(--gold-bg); color: var(--gold2); font-weight: 500; }
   .toggle-btn.active-blue { border-color: var(--accent); background: var(--accent-bg); color: var(--accent); font-weight: 500; }
-
   .account-slide { display: flex; flex-direction: column; gap: 8px; overflow: hidden; max-height: 0; transition: max-height 0.35s ease, opacity 0.25s ease; opacity: 0; pointer-events: none; }
   .account-slide.open { max-height: 220px; opacity: 1; pointer-events: auto; margin-top: 8px; }
-
   .submit-btn { width: 100%; max-width: 480px; padding: 0.85rem; background: linear-gradient(135deg, #b8922e 0%, #d4aa50 50%, #c09030 100%); color: #1a1200; font-size: 15px; font-weight: 700; font-family: inherit; border: none; border-radius: var(--radius); cursor: pointer; box-shadow: 0 4px 24px rgba(201,168,76,0.2); transition: opacity 0.15s, transform 0.1s; }
   .submit-btn:hover { opacity: 0.92; transform: translateY(-1px); }
   .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
   .done-card { width: 100%; max-width: 480px; background: var(--surface); border: 1px solid rgba(62,207,142,0.2); border-radius: var(--radius); padding: 2.5rem 1.5rem; text-align: center; flex-direction: column; align-items: center; gap: 0.75rem; display: none; }
   .done-card.show { display: flex; }
   .done-icon { font-size: 3rem; }
@@ -68,27 +59,22 @@
   .done-desc { font-size: 13.5px; color: var(--text2); line-height: 1.8; }
   .done-info { background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 0.85rem 1rem; width: 100%; text-align: left; font-size: 13px; color: var(--text2); line-height: 2; }
   .done-info strong { color: var(--text); }
-
   .admin-confirm-btn { width: 100%; padding: 0.65rem; background: linear-gradient(135deg,#b8922e,#d4aa50,#c09030); color: #1a1200; font-size: 14px; font-weight: 700; font-family: inherit; border: none; border-radius: var(--radius-sm); cursor: pointer; }
   .admin-error { font-size: 12px; color: var(--red); text-align: center; display: none; }
   .admin-panel { width: 100%; display: none; flex-direction: column; align-items: center; gap: 1rem; }
   .admin-panel.show { display: flex; }
-
   .count-chip { font-size: 12px; padding: 3px 10px; border-radius: 20px; background: var(--surface3); color: var(--text2); border: 1px solid var(--border); }
   .dl-btn { display: flex; align-items: center; gap: 5px; padding: 6px 14px; border-radius: var(--radius-sm); background: var(--green-bg); color: var(--green); border: 1px solid rgba(62,207,142,0.25); font-size: 12px; font-family: inherit; font-weight: 500; cursor: pointer; }
   .dl-btn:hover { opacity: 0.8; }
   .dl-btn:disabled { opacity: 0.3; cursor: not-allowed; }
   .dl-btn svg { width: 13px; height: 13px; }
-
   .refresh-btn { display: flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: var(--radius-sm); background: var(--surface3); color: var(--text2); border: 1px solid var(--border2); font-size: 12px; font-family: inherit; cursor: pointer; }
   .refresh-btn:hover { color: var(--text); }
-
   .list-body { display: flex; flex-direction: column; }
   .list-empty { color: var(--text3); font-size: 13px; text-align: center; padding: 1.5rem 0; }
   .list-loading { color: var(--text3); font-size: 13px; text-align: center; padding: 1.5rem 0; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .spinner { width: 14px; height: 14px; border: 2px solid var(--border2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.7s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .list-item { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border); animation: fadeIn 0.2s ease; }
   .list-item:last-child { border-bottom: none; }
   @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
@@ -101,26 +87,20 @@
   .method-tag { font-size: 11px; padding: 2px 8px; border-radius: 20px; }
   .method-tag.kakao { background: rgba(247,230,0,0.12); color: #d4b800; border: 1px solid rgba(247,230,0,0.2); }
   .method-tag.account { background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-border); }
-
   .logout-btn { width: 100%; max-width: 480px; padding: 0.7rem; background: transparent; color: var(--red); border: 1px solid rgba(255,107,107,0.2); border-radius: var(--radius); font-size: 13px; font-family: inherit; cursor: pointer; }
   footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text3); margin-top: auto; }
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-logo"><span>⚽</span> 월드컵 게임 환불</div>
   <div class="nav-badge">2026 환불 신청</div>
 </nav>
-
 <div class="tabs">
   <button class="tab-btn active" onclick="switchTab('user')">✍️ 환불 신청</button>
   <button class="tab-btn" onclick="switchTab('admin')">🔒 관리자</button>
 </div>
-
 <div class="main">
-
-  <!-- 일반 탭 -->
   <div class="tab-panel active" id="tab-user">
     <div class="card" id="formCard">
       <div class="card-header">
@@ -173,9 +153,7 @@
         </div>
       </div>
     </div>
-
     <button class="submit-btn" id="submitBtn" onclick="submitForm()">환불 신청하기 →</button>
-
     <div class="done-card" id="doneCard">
       <div class="done-icon">✅</div>
       <div class="done-title">환불 신청 완료!</div>
@@ -184,7 +162,6 @@
     </div>
   </div>
 
-  <!-- 관리자 탭 -->
   <div class="tab-panel" id="tab-admin">
     <div class="card" id="adminLoginBox">
       <div class="card-header">
@@ -200,7 +177,6 @@
         <div class="admin-error" id="adminError">비밀번호가 올바르지 않습니다</div>
       </div>
     </div>
-
     <div class="admin-panel" id="adminPanel">
       <div class="card">
         <div class="card-header">
@@ -211,8 +187,7 @@
               <span class="count-chip" id="countChip">0명</span>
               <button class="refresh-btn" onclick="loadSubmissions()">↻ 새로고침</button>
               <button class="dl-btn" id="dlBtn" onclick="downloadExcel()" disabled>
-                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v8M4 6l3 3 3-3M2 11h10"/></svg>
-                엑셀
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v8M4 6l3 3 3-3M2 11h10"/></svg>엑셀
               </button>
             </div>
           </h3>
@@ -227,42 +202,41 @@
     </div>
   </div>
 </div>
-
 <footer>⚽ 2026 월드컵 스코어 게임 · 환불 신청 시스템</footer>
 
 <script>
 const ADMIN_PW = '1234';
-const STORAGE_KEY = 'wc_refund_2026';
+const DB = 'https://worldcup-refund-default-rtdb.firebaseio.com/submissions';
 let selAmount = '', selMethod = '';
 let submissions = [];
 
-// ── 저장/불러오기 (window.storage 공유모드) ──
 async function saveSubmissions() {
-  try {
-    await window.storage.set(STORAGE_KEY, JSON.stringify(submissions), true);
-  } catch(e) { console.error('save error', e); throw e; }
+  const r = await fetch(DB + '.json', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(submissions)
+  });
+  if (!r.ok) throw new Error('Firebase 저장 실패: ' + r.status);
 }
 
 async function loadSubmissions() {
-  const body = document.getElementById('listBody');
-  body.innerHTML = '<div class="list-loading"><div class="spinner"></div> 불러오는 중...</div>';
+  document.getElementById('listBody').innerHTML = '<div class="list-loading"><div class="spinner"></div> 불러오는 중...</div>';
   try {
-    const res = await window.storage.get(STORAGE_KEY, true);
-    submissions = res ? JSON.parse(res.value) : [];
+    const r = await fetch(DB + '.json');
+    const data = await r.json();
+    submissions = Array.isArray(data) ? data : [];
   } catch(e) {
     submissions = [];
   }
   renderList();
 }
 
-// ── 탭 ──
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', (tab==='user'&&i===0)||(tab==='admin'&&i===1)));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
 }
 
-// ── 폼 ──
 function selectAmount(btn, val) {
   btn.parentElement.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active-gold'));
   btn.classList.add('active-gold');
@@ -280,8 +254,8 @@ function toggleCustomBank(sel) {
   if (sel.value !== '기타') c.value = '';
 }
 function getBank() {
-  const sel = document.getElementById('bankSelect').value;
-  return sel === '기타' ? document.getElementById('customBank').value.trim() : sel;
+  const v = document.getElementById('bankSelect').value;
+  return v === '기타' ? document.getElementById('customBank').value.trim() : v;
 }
 
 async function submitForm() {
@@ -305,29 +279,27 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = '신청 중...';
 
-  // 최신 데이터 먼저 불러오기
   try {
-    const res = await fetch(FIREBASE_URL + '.json');
-    const data = await res.json();
-    submissions = data || [];
-  } catch(e) { submissions = []; }
+    // 최신 데이터 불러오기
+    const r = await fetch(DB + '.json');
+    const data = await r.json();
+    submissions = Array.isArray(data) ? data : [];
 
-  if (submissions.find(s => s.name === name)) {
-    alert(name + '님은 이미 신청하셨어요!');
-    btn.disabled = false; btn.textContent = '환불 신청하기 →';
-    return;
-  }
+    if (submissions.find(s => s.name === name)) {
+      alert(name + '님은 이미 신청하셨어요!');
+      btn.disabled = false; btn.textContent = '환불 신청하기 →';
+      return;
+    }
 
-  const entry = { name, amount: selAmount, method: selMethod, bank, num, holder, detail, time: new Date().toLocaleString('ko-KR') };
-  submissions.push(entry);
-
-  try {
+    const entry = { name, amount: selAmount, method: selMethod, bank, num, holder, detail, time: new Date().toLocaleString('ko-KR') };
+    submissions.push(entry);
     await saveSubmissions();
     showDone(entry);
   } catch(e) {
-    submissions.pop();
-    alert('저장 중 오류가 발생했습니다. 다시 시도해주세요.');
-    btn.disabled = false; btn.textContent = '환불 신청하기 →';
+    console.error(e);
+    alert('저장 중 오류가 발생했습니다: ' + e.message);
+    btn.disabled = false;
+    btn.textContent = '환불 신청하기 →';
   }
 }
 
@@ -342,7 +314,6 @@ function showDone(e) {
     '<strong>방법</strong> ' + (e.method==='kakao' ? '💛 카카오페이' : '🏦 ' + e.detail);
 }
 
-// ── 관리자 ──
 async function checkAdmin() {
   const pw = document.getElementById('adminPw').value;
   if (pw === ADMIN_PW) {
@@ -353,7 +324,6 @@ async function checkAdmin() {
     document.getElementById('adminError').style.display = 'block';
   }
 }
-
 function logoutAdmin() {
   document.getElementById('adminPanel').classList.remove('show');
   document.getElementById('adminLoginBox').style.display = 'block';
@@ -365,10 +335,7 @@ function renderList() {
   const body = document.getElementById('listBody');
   document.getElementById('countChip').textContent = submissions.length + '명';
   document.getElementById('dlBtn').disabled = !submissions.length;
-  if (!submissions.length) {
-    body.innerHTML = '<div class="list-empty">아직 신청자가 없어요</div>';
-    return;
-  }
+  if (!submissions.length) { body.innerHTML = '<div class="list-empty">아직 신청자가 없어요</div>'; return; }
   body.innerHTML = submissions.map(s => {
     const tag = s.method==='kakao'
       ? '<span class="method-tag kakao">카카오페이</span>'
@@ -377,14 +344,10 @@ function renderList() {
     return `<div class="list-item">
       <div class="item-left">
         <div class="item-avatar">${init}</div>
-        <div>
-          <div class="item-name">${s.name}</div>
-          <div class="item-detail">${s.detail}</div>
-        </div>
+        <div><div class="item-name">${s.name}</div><div class="item-detail">${s.detail}</div></div>
       </div>
       <div class="item-right">
-        <div class="item-amount">${Number(s.amount).toLocaleString()}원</div>
-        ${tag}
+        <div class="item-amount">${Number(s.amount).toLocaleString()}원</div>${tag}
       </div>
     </div>`;
   }).join('');
